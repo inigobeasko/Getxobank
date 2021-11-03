@@ -69,7 +69,7 @@ public class VentanaRegistro extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				ventanaActual.dispose();
 				
-				VentanaLogin ventana = new VentanaLogin(ventanaActual);
+				VentanaLogiin ventana = new VentanaLogiin();
 				ventana.setVisible(true);
 				
 				
@@ -130,21 +130,14 @@ public class VentanaRegistro extends JFrame {
 		panelCentral.add(lblAñoNacimiento);
 		
 		
-		// LLENAMOS EL COMBO BOX CON LOS ULTIMOS 100 AÑOS
-		int año = 2021;
-		int i = 0;
-		int[]a = new int[100] ;
-		for(i = 0; i<100;i++) {
-			año = año -i;
-			a[i]= año;
-			
-		}
+	
 		
 		
 		
-		JComboBox comboAño = new JComboBox<>();
+		JComboBox comboAño = new JComboBox<Integer>();
+		llenarComboFechas(comboAño);
 		
-		comboAño.addItem(a);
+		
 		panelCentral.add(comboAño);
 		
 		JLabel lblProvincia = new JLabel("PROVINCIA");
@@ -186,9 +179,21 @@ public class VentanaRegistro extends JFrame {
 		comprobarEmail();
 		comprobarNombre();
 		comprobarTelelfono();
-		Usuario u = new Usuario();
+		//Usuario u = new Usuario();
 		
 		//Usuario  nuevoUsuario= new Usuario(textEmail.getText(), textNombre.getText(), textApellidos.getText(), textDni.getText(), comboAño.getSelectedItem(), comboProvincia.getSelectedItem(), 0, 0, 0);
+		
+	}
+	public void llenarComboFechas(JComboBox<Integer> combo) {
+		// LLENAMOS EL COMBO BOX CON LOS ULTIMOS 100 AÑOS
+		int año = 2022;
+		int i = 0;
+		
+		for(i = 0; i<100;i++) {
+			año = año -1;
+			combo.addItem(año);
+			
+		}
 		
 	}
 	

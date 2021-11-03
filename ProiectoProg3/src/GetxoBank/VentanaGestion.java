@@ -102,7 +102,7 @@ btnVolver.addActionListener(new ActionListener() {
 public void actionPerformed(ActionEvent e) {
 // TODO Auto-generated method stub
 ventanaActual.dispose();
-VentanaLogin ventanaLogin = new VentanaLogin(va);
+VentanaLogiin ventanaLogin = new VentanaLogiin();
 ventanaLogin.setVisible(true);
 
 }

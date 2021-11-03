@@ -3,24 +3,22 @@ package GetxoBank;
 import java.util.TreeSet;
 
 public class Usuario {
-	private String email,nombre,apellidos,dni,fechaNacimiento;
+	private String email,nombre,apellidos,dni,fechaNacimiento,contraseñaUsuario;
 	private Provincia provincia;
-	private int numeroDeCuentas,saldoUsuario,PIN;
+	private int numeroDeCuentas,saldoUsuario;
 	private static TreeSet<Cuenta>tsCuentas;
-	public Usuario() {
-	}
 	public Usuario(String email, String nombre, String apellidos, String dni, String fechaNacimiento,
-			Provincia provincia, int numeroDeCuentas, int saldoUsuario, int pIN) {
+			String contraseñaUsuario, Provincia provincia, int numeroDeCuentas, int saldoUsuario) {
 		super();
 		this.email = email;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.dni = dni;
 		this.fechaNacimiento = fechaNacimiento;
+		this.contraseñaUsuario = contraseñaUsuario;
 		this.provincia = provincia;
 		this.numeroDeCuentas = numeroDeCuentas;
 		this.saldoUsuario = saldoUsuario;
-		PIN = pIN;
 	}
 	public String getEmail() {
 		return email;
@@ -52,6 +50,12 @@ public class Usuario {
 	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
+	public String getContraseñaUsuario() {
+		return contraseñaUsuario;
+	}
+	public void setContraseñaUsuario(String contraseñaUsuario) {
+		this.contraseñaUsuario = contraseñaUsuario;
+	}
 	public Provincia getProvincia() {
 		return provincia;
 	}
@@ -64,30 +68,19 @@ public class Usuario {
 	public void setNumeroDeCuentas(int numeroDeCuentas) {
 		this.numeroDeCuentas = numeroDeCuentas;
 	}
-	
-	public int getPIN() {
-		return PIN;
-	}
-	public void setPIN(int pIN) {
-		PIN = pIN;
-	}
-	
-	//Metodo para obtener el saldo total del usuario
-	
-	/**public int getSaldoUsuario() {
-		saldoUsuario = 0;
-		
-		
-		for (cuenta:tsCuentas) {
-			saldoUsuario = saldoUsuario + cuenta.getSaldo;
-			
-		};
+	public int getSaldoUsuario() {
 		return saldoUsuario;
-	}**/
+	}
+	public void setSaldoUsuario(int saldoUsuario) {
+		this.saldoUsuario = saldoUsuario;
+	}
+	public static TreeSet<Cuenta> getTsCuentas() {
+		return tsCuentas;
+	}
+	public static void setTsCuentas(TreeSet<Cuenta> tsCuentas) {
+		Usuario.tsCuentas = tsCuentas;
+	}
 	
-	
-
-
 
 	
 

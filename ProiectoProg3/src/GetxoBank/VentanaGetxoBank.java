@@ -85,7 +85,7 @@ public class VentanaGetxoBank extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				ventanaActual.dispose();
 				
-				new VentanaLogin(ventanaActual).setVisible(true); 
+				new VentanaLogiin().setVisible(true); 
 				
 			}
 		});
