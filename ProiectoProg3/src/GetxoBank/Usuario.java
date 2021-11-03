@@ -5,10 +5,10 @@ import java.util.TreeSet;
 public class Usuario {
 	private String email,nombre,apellidos,dni,fechaNacimiento,contraseñaUsuario;
 	private Provincia provincia;
-	private int numeroDeCuentas,saldoUsuario;
+	private int numeroDeCuentas,saldoUsuario,telefono;
 	private static TreeSet<Cuenta>tsCuentas;
 	public Usuario(String email, String nombre, String apellidos, String dni, String fechaNacimiento,
-			String contraseñaUsuario, Provincia provincia, int numeroDeCuentas, int saldoUsuario) {
+			String contraseñaUsuario, Provincia provincia, int numeroDeCuentas, int saldoUsuario, int telefono) {
 		super();
 		this.email = email;
 		this.nombre = nombre;
@@ -19,6 +19,7 @@ public class Usuario {
 		this.provincia = provincia;
 		this.numeroDeCuentas = numeroDeCuentas;
 		this.saldoUsuario = saldoUsuario;
+		this.telefono = telefono;
 	}
 	public String getEmail() {
 		return email;
@@ -74,6 +75,12 @@ public class Usuario {
 	public void setSaldoUsuario(int saldoUsuario) {
 		this.saldoUsuario = saldoUsuario;
 	}
+	public int getTelefono() {
+		return telefono;
+	}
+	public void setTelefono(int telefono) {
+		this.telefono = telefono;
+	}
 	public static TreeSet<Cuenta> getTsCuentas() {
 		return tsCuentas;
 	}
@@ -81,7 +88,6 @@ public class Usuario {
 		Usuario.tsCuentas = tsCuentas;
 	}
 	
-
 	
-
 }
+	

@@ -28,9 +28,11 @@ public class VentanaRegistro extends JFrame {
 	private JTextField textNombre;
 	private JTextField textApellidos;
 	private JTextField textTelefono;
-	private JTextField dni;
-	private JTextField textPin;
+	private JTextField textContraseña;
 	private JTextField textDni;
+	private int numeroDeCuentas,saldoUsuario,telefono;
+	private Provincia p;
+	private String email,nombre,apellidos,dni,contraseña,fechaNacimiento;
 	private JFrame ventanaActual;
 	
 
@@ -54,6 +56,16 @@ public class VentanaRegistro extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaRegistro() {
+		/**
+		textApellidos.setText("");;
+		textContraseña.setText("");
+		textDni.setText("");;
+		textEmail.setText("");;
+		textNombre.setText("");;
+		textTelefono.setText("");
+		**/
+		
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -78,6 +90,7 @@ public class VentanaRegistro extends JFrame {
 		panelSur.add(btnVolver);
 		
 		JButton btnFinalizar = new JButton("FINALIZAR");
+		
 		panelSur.add(btnFinalizar);
 		
 		JPanel panelCentral = new JPanel();
@@ -119,12 +132,12 @@ public class VentanaRegistro extends JFrame {
 		panelCentral.add(textTelefono);
 		textTelefono.setColumns(10);
 		
-		JLabel lblPin = new JLabel("INTRODUZCA SU PIN");
-		panelCentral.add(lblPin);
+		JLabel lblContraseña = new JLabel("INTRODUZCA SU CONTRASE\u00D1A");
+		panelCentral.add(lblContraseña);
 		
-		textPin = new JTextField();
-		panelCentral.add(textPin);
-		textPin.setColumns(10);
+		textContraseña = new JTextField();
+		panelCentral.add(textContraseña);
+		textContraseña.setColumns(10);
 		
 		JLabel lblAñoNacimiento = new JLabel("A\u00D1O DE  NACIMIENTO");
 		panelCentral.add(lblAñoNacimiento);
@@ -147,7 +160,54 @@ public class VentanaRegistro extends JFrame {
 		comboProvincia.setModel(new DefaultComboBoxModel(Provincia.values()));
 		panelCentral.add(comboProvincia);
 		
-		 ventanaActual = this;
+		ventanaActual = this;
+		email= textEmail.getText();
+		nombre = textNombre.getText();
+		apellidos= textApellidos.getText();
+		dni= textDni.getText();
+		contraseña = textContraseña.getText();			
+		numeroDeCuentas= 0;
+		Object fch= comboAño.getSelectedItem();
+		fechaNacimiento = fch.toString();
+		saldoUsuario=0;
+		telefono = Integer.parseInt(textTelefono.getText());
+		
+			
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		
+		
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
 	}
 	//METODOS
 	public void comprobarEmail() {
@@ -175,10 +235,11 @@ public class VentanaRegistro extends JFrame {
 		return correctoTelefono;
 	}
 	public void crearUsuario() {
-		comprobarDni();
-		comprobarEmail();
-		comprobarNombre();
-		comprobarTelelfono();
+		/**public Usuario(String email, String nombre, String apellidos, String dni, String fechaNacimiento,
+			String contraseñaUsuario, Provincia provincia, int numeroDeCuentas, int saldoUsuario, int telefono) 
+		**/
+		Usuario u = new Usuario(email, nombre, apellidos, dni, fechaNacimiento, contraseña, p, numeroDeCuentas, saldoUsuario,  telefono);
+		System.out.println(u);
 		//Usuario u = new Usuario();
 		
 		//Usuario  nuevoUsuario= new Usuario(textEmail.getText(), textNombre.getText(), textApellidos.getText(), textDni.getText(), comboAño.getSelectedItem(), comboProvincia.getSelectedItem(), 0, 0, 0);
