@@ -21,6 +21,15 @@ public class Usuario {
 		this.saldoUsuario = saldoUsuario;
 		this.telefono = telefono;
 	}
+	
+	@Override
+	public String toString() {
+		return "Usuario [email=" + email + ", nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni
+				+ ", fechaNacimiento=" + fechaNacimiento + ", contraseñaUsuario=" + contraseñaUsuario + ", provincia="
+				+ provincia + ", numeroDeCuentas=" + numeroDeCuentas + ", saldoUsuario=" + saldoUsuario + ", telefono="
+				+ telefono + "]";
+	}
+
 	public String getEmail() {
 		return email;
 	}

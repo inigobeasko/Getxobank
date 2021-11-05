@@ -77,20 +77,11 @@ public class VentanaRegistro extends JFrame {
 		contentPane.add(panelSur, BorderLayout.SOUTH);
 		
 		JButton btnVolver = new JButton("VOLVER");
-		btnVolver.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				ventanaActual.dispose();
-				
-				VentanaLogiin ventana = new VentanaLogiin();
-				ventana.setVisible(true);
-				
-				
-			}
-		});
+	
 		panelSur.add(btnVolver);
 		
 		JButton btnFinalizar = new JButton("FINALIZAR");
-		
+	
 		panelSur.add(btnFinalizar);
 		
 		JPanel panelCentral = new JPanel();
@@ -170,9 +161,7 @@ public class VentanaRegistro extends JFrame {
 		Object fch= comboAño.getSelectedItem();
 		fechaNacimiento = fch.toString();
 		saldoUsuario=0;
-		telefono = Integer.parseInt(textTelefono.getText());
 		
-			
 		 
 		 
 		 
@@ -181,8 +170,21 @@ public class VentanaRegistro extends JFrame {
 		 
 		 
 		 
-		 
-		 
+		btnVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ventanaActual.dispose();
+				
+				VentanaLogiin ventana = new VentanaLogiin();
+				ventana.setVisible(true);
+				
+				
+			}
+		});
+		btnFinalizar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				crearUsuario();
+			}
+		});
 		
 		
 		 
@@ -234,12 +236,15 @@ public class VentanaRegistro extends JFrame {
 		boolean correctoTelefono = Pattern.matches(erTelefono, datoRecibido);
 		return correctoTelefono;
 	}
-	public void crearUsuario() {
+	public Usuario crearUsuario() {
 		/**public Usuario(String email, String nombre, String apellidos, String dni, String fechaNacimiento,
 			String contraseñaUsuario, Provincia provincia, int numeroDeCuentas, int saldoUsuario, int telefono) 
 		**/
+		
+		
 		Usuario u = new Usuario(email, nombre, apellidos, dni, fechaNacimiento, contraseña, p, numeroDeCuentas, saldoUsuario,  telefono);
 		System.out.println(u);
+		return u;
 		//Usuario u = new Usuario();
 		
 		//Usuario  nuevoUsuario= new Usuario(textEmail.getText(), textNombre.getText(), textApellidos.getText(), textDni.getText(), comboAño.getSelectedItem(), comboProvincia.getSelectedItem(), 0, 0, 0);
@@ -255,6 +260,10 @@ public class VentanaRegistro extends JFrame {
 			combo.addItem(año);
 			
 		}
+		
+	}
+	public void guardarUsuarioEnElHashMapDeLaVentanaLogin() {
+		
 		
 	}
 	
