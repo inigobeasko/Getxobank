@@ -7,6 +7,7 @@ public class Cuenta {
 	private int numeroTarjeta;
 	private double saldo;
 	private TipoCuenta tipo;
+	//TODO private Arraylist<Usuario> dueñoCuenta
 	public Cuenta(String nombre, int numeroTarjeta, double saldo, TipoCuenta tipo) {
 		super();
 		this.nombre = nombre;

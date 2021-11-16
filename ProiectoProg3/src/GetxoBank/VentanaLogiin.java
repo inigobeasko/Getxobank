@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class VentanaLogiin extends JFrame {
 	
@@ -63,6 +64,8 @@ public class VentanaLogiin extends JFrame {
 		panelSur.add(btnVolver);
 		
 		JButton btnAcceder = new JButton("ACCEDER");
+		btnAcceder.setForeground(Color.BLACK);
+		btnAcceder.setBackground(Color.WHITE);
 		
 		panelSur.add(btnAcceder);
 		
@@ -75,6 +78,8 @@ public class VentanaLogiin extends JFrame {
 		panelCentro.setLayout(new GridLayout(0, 2, 0, 0));
 		
 		JLabel lblDni = new JLabel("DNI ---->");
+		lblDni.setForeground(Color.BLACK);
+		lblDni.setBackground(Color.WHITE);
 		panelCentro.add(lblDni);
 		
 		textDni = new JTextField();
